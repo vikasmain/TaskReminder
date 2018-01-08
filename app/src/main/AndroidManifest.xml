@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.taskreminder">
+
+
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true">
+
+
+    <activity android:label="@string/app_name" android:name=".MainActivity">
+
+
+    <intent-filter>
+
+    <action android:name="android.intent.action.MAIN"/>
+
+    <category android:name="android.intent.category.LAUNCHER"/>
+
+</intent-filter>
+
+</activity>
+
+
+    <activity android:label="@string/title_activity_create_note" android:name=".CreateNote">
+
+
+    -<intent-filter>
+
+    <action android:name="com.example.dominic.memo.CreateNote"/>
+
+    <category android:name="android.intent.category.DEFAULT"/>
+
+</intent-filter>
+
+</activity>
+
+    <activity android:label="@string/title_activity_information" android:name=".View_Note"> </activity>
+
+    <activity android:label="@string/title_activity_edit__note" android:name=".Edit_Note"> </activity>
+
+    <receiver android:name=".AlarmReceiver" android:exported="true" android:enabled="true"> </receiver>
+
+    <activity android:theme="@android:style/Theme.Dialog" android:name=".Alert"> </activity>
+
+</application>
+
+</manifest>

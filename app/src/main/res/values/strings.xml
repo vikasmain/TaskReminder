@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+    <resources>
+
+    <string name="app_name">Task Reminder</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_create_note">Create Note</string>
+
+    <string name="title">Test</string>
+
+    <string name="detail">Small Text</string>
+
+
+    <string-array name="note_type">
+
+    <item>Normal</item>
+
+    <item>Standard</item>
+
+    <item>Urgent</item>
+
+</string-array>
+
+    <string name="title_activity_information">Information</string>
+
+    <string name="title_activity_edit__note">Edit Note</string>
+
+    <string name="New">Create New Note</string>
+
+    <string name="back">Back to Main</string>
+
+    <string name="save">Save Note</string>
+
+    <string name="edit">Edit Note</string>
+
+    <string name="discard">Discard Note</string>
+
+    <string name="note_type_text">Choose Note Type:</string>
+
+    <string name="title_activity_alert">Alert</string>
+
+    <string name="Not_Set">Not Set</string>
+
+    <string name="hour_minutes">HH:mm</string>
+
+    <string name="alert_title">title</string>
+
+    <string name="added_alert">An Alert can be added</string>
+
+    <string name="rodId">rowID</string>
+
+    <string name="Alertnotifty">"Alert: "</string>
+
+    <string name="alerttitle">title</string>
+
+    <string name="delete_title">Delete Selected Task</string>
+
+    <string name="delete_message">Are you sure?</string>
+
+    <string name="yes">Yes</string>
+
+    <string name="no">No</string>
+
+    <string name="rodID">rowID</string>
+
+    <string name="rowID">rowID</string>
+
+    <string name="row_id">rowID</string>
+
+    <string name="intent_row_id">rowID</string>
+
+    <string name="row_id_long">rowID</string>
+
+    <string name="alarm_active">An Alert can be added!</string>
+
+    <string name="row_id_log">rowID</string>
+
+    <string name="title_hint">Enter Task</string>
+
+    <string name="hint_description">Enter Task Description</string>
+
+    <string name="set_alert">Set Alert</string>
+
+    <string name="textview_date">Select Date</string>
+
+    <string name="txt_time">Enter Time:</string>
+
+    <string name="txt_edit_hint">Enter Title</string>
+
+    <string name="detail_hint">Enter Description</string>
+
+    <string name="type_note">Note Type:</string>
+
+    <string name="view_title">Large Text</string>
+
+    <string name="view_detail">Medium Text</string>
+
+    <string name="note_type">Medium Text</string>
+
+    <string name="type_list_entry">Small Text</string>
+
+    <string name="time_vie">testtime</string>
+
+    <string name="alarmtext">Alert: </string>
+
+    <string name="dateformate">dd/MM/yyyy</string>
+
+    <string name="Not_Set_Alert">Not Set</string>
+
+    <string name="ok">Ok</string>
+
+    <string name="title_msg">title</string>
+
+    <string name="titttle">title</string>
+
+</resources>

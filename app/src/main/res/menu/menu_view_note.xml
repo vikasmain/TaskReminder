@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dominic.memo.View_Note">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_back"
+        android:icon="@drawable/ic_action_back"
+        android:title="@string/back"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/action_edit"
+        android:icon="@drawable/ic_action_edit"
+        android:title="@string/edit"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/action_discard"
+        android:icon="@drawable/ic_action_discard"
+        android:title="@string/discard"
+        app:showAsAction="always"
+        />
+</menu>
