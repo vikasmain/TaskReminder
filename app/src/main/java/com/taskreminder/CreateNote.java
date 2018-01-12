@@ -38,7 +38,7 @@ public class CreateNote extends AppCompatActivity {
     TimePicker pickerTime;
     TextView time;
     TextView date;
-    CheckBox checkBoxAlarm;
+    CheckBox checkBoxAlarm,checkboxnotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class CreateNote extends AppCompatActivity {
         time = (TextView) findViewById(R.id.txtTime);
         date = (TextView) findViewById(R.id.txtDate);
         checkBoxAlarm = (CheckBox) findViewById(R.id.checkBox);
+        checkboxnotify = (CheckBox) findViewById(R.id.checkBox2);
 
 
         pickerDate.setVisibility(View.INVISIBLE);
@@ -77,6 +78,14 @@ public class CreateNote extends AppCompatActivity {
                             checkBoxAlarm.setEnabled(false);
                             checkBoxAlarm.setChecked(false);
                         }
+                        if(id == 3){
+                            showToast(getString(R.string.notify));
+                            checkboxnotify.setEnabled(true);
+                        }
+                        else {
+                            checkboxnotify.setEnabled(false);
+                            checkboxnotify.setChecked(false);
+                        }
                     }
 
                     public void onNothingSelected(AdapterView parent) {
@@ -84,6 +93,23 @@ public class CreateNote extends AppCompatActivity {
         });
 
         checkBoxAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true){
+                    pickerDate.setVisibility(View.VISIBLE);
+                    pickerTime.setVisibility(View.VISIBLE);
+                    time.setVisibility(View.VISIBLE);
+                    date.setVisibility(View.VISIBLE);
+                }
+                else{
+                    pickerDate.setVisibility(View.INVISIBLE);
+                    pickerTime.setVisibility(View.INVISIBLE);
+                    time.setVisibility(View.INVISIBLE);
+                    date.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+        checkboxnotify.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true){
@@ -161,7 +187,35 @@ public class CreateNote extends AppCompatActivity {
                     cv.put(mDbHelper.TIME, timeString);
                     cv.put(mDbHelper.DATE, dateString);
                 }
+                else if(checkboxnotify.isChecked()){
+                    Calendar calender = Calendar.getInstance();
+                    calender.clear();
+                    calender.set(Calendar.MONTH, pickerDate.getMonth());
+                    calender.set(Calendar.DAY_OF_MONTH, pickerDate.getDayOfMonth());
+                    calender.set(Calendar.YEAR, pickerDate.getYear());
+                    calender.set(Calendar.HOUR, pickerTime.getCurrentHour());
+                    calender.set(Calendar.MINUTE, pickerTime.getCurrentMinute());
+                    calender.set(Calendar.SECOND, 00);
 
+                    SimpleDateFormat formatter = new SimpleDateFormat(getString(R.string.hour_minutes));
+                    String timeString = formatter.format(new Date(calender.getTimeInMillis()));
+                    SimpleDateFormat dateformatter = new SimpleDateFormat(getString(R.string.dateformate));
+                    String dateString = dateformatter.format(new Date(calender.getTimeInMillis()));
+
+                    AlarmManager alarmMgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                    Intent intent = new Intent(this, NotificationManager2.class);
+
+                    String alertTitle = mTitleText.getText().toString();
+                    String alertContent=mDescriptionText.getText().toString();
+                    intent.putExtra(getString(R.string.alert_title), alertTitle);
+                    intent.putExtra(getString(R.string.alert_content), alertContent);
+
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+                    alarmMgr.set(AlarmManager.RTC_WAKEUP, calender.getTimeInMillis(), pendingIntent);
+                    cv.put(mDbHelper.TIME, timeString);
+                    cv.put(mDbHelper.DATE, dateString);
+                }
                 db.insert(mDbHelper.TABLE_NAME, null, cv);
 
                 Intent openMainScreen = new Intent(this, MainActivity.class);

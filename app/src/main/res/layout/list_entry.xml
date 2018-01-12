@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="10dp">
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -12,6 +13,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/title"
+            android:textColor="@color/blue"
+            android:layout_margin="3dp"
             android:id="@+id/title"
             android:layout_toLeftOf="@+id/type"
             android:layout_alignParentLeft="true"
@@ -24,6 +27,7 @@
             android:text="@string/type_list_entry"
             android:id="@+id/type"
             android:layout_column="71"
+            android:textColor="@android:color/holo_blue_light"
             android:layout_weight="0.24"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
@@ -39,6 +43,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/detail"
+            android:textColor="@android:color/holo_orange_dark"
+            android:layout_margin="3dp"
             android:id="@+id/Detail"
             android:layout_weight="0.73"
             android:layout_alignParentLeft="true"
@@ -63,6 +69,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/time"
             android:text="@string/time_vie"
+            android:textColor="@android:color/holo_red_dark"
             android:layout_gravity="right"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
@@ -75,6 +82,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/date"
+        android:textColor="@android:color/holo_red_dark"
         android:layout_gravity="right" />
 
 </LinearLayout>

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,14 +21,22 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase db;
     DbHelper mDbHelper;
     ListView list;
-
+    FloatingActionButton floatingActionButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Task Reminder");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.blue)));
-        list = (ListView)findViewById(R.id.commentslist);
+        list = (ListView)findViewById(R.id.commentlist);
+        floatingActionButton=(FloatingActionButton)findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openCreateNote = new Intent(MainActivity.this, CreateNote.class);
+                startActivity(openCreateNote);
+            }
+        });
         mDbHelper = new DbHelper(this);
         db= mDbHelper.getWritableDatabase();
         final ImageView alarmImage = (ImageView) findViewById(R.id.alarmImage);

@@ -22,6 +22,7 @@
     <item>Standard</item>
 
     <item>Urgent</item>
+    <item>Notify</item>
 
 </string-array>
 
@@ -48,9 +49,9 @@
     <string name="hour_minutes">HH:mm</string>
 
     <string name="alert_title">title</string>
-
+    <string name="set_notify">Set Notification</string>
     <string name="added_alert">An Alert can be added</string>
-
+    <string name="notify">You can recieve notifications</string>
     <string name="rodId">rowID</string>
 
     <string name="Alertnotifty">"Alert: "</string>
@@ -116,5 +117,6 @@
     <string name="title_msg">title</string>
 
     <string name="titttle">title</string>
+    <string name="alert_content">alert_content</string>
 
 </resources>

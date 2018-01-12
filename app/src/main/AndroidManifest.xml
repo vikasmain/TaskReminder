@@ -38,6 +38,7 @@
     <activity android:label="@string/title_activity_edit__note" android:name=".Edit_Note"> </activity>
 
     <receiver android:name=".AlarmReceiver" android:exported="true" android:enabled="true"> </receiver>
+        <receiver android:name=".NotificationManager2" android:exported="true" android:enabled="true"> </receiver>
 
     <activity android:theme="@android:style/Theme.Dialog" android:name=".Alert"> </activity>
 

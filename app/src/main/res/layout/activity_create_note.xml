@@ -124,6 +124,26 @@
                     android:enabled="false"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Do U Want to Notify?Choose Notify"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/blue"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_alert"
+                    android:textSize="18sp"
+                    android:id="@+id/checkBox2"
+                    android:layout_margin="3dp"
+                    android:layout_below="@+id/spinnerNoteType"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:enabled="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <TextView
                     android:layout_width="match_parent"
